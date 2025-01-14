@@ -178,10 +178,23 @@ export async function POST(req: Request) {
 
     try {
       // 使用 yt-dlp 获取视频信息
-      const { stdout } = await execFileAsync('bash', [
-        '-c',
-        `proxychains ${YT_DLP_PATH} ${standardUrl} --dump-single-json --quiet --no-warnings --format "bv*[protocol^=http]+ba[protocol^=http]/b[protocol^=http]"`
-      ])
+      let stdout: string;
+      if (os.platform() !== 'win32') {
+        const result = await execFileAsync('bash', [
+          '-c',
+          `proxychains ${YT_DLP_PATH} ${standardUrl} --dump-single-json --quiet --no-warnings --format "bv*[protocol^=http]+ba[protocol^=http]/b[protocol^=http]"`
+        ])
+        stdout = result.stdout;
+      } else {
+        const result = await execFileAsync(YT_DLP_PATH, [
+          standardUrl,
+          '--dump-single-json',
+          '--quiet',
+          '--no-warnings',
+          '--format', 'bv*[protocol^=http]+ba[protocol^=http]/b[protocol^=http]'
+        ])
+        stdout = result.stdout;
+      }
 
       // 解析 JSON 输出
       const info = JSON.parse(stdout)

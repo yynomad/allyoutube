@@ -66,15 +66,15 @@ export function VideoForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-6xl mx-auto">
+    <form onSubmit={handleSubmit} className="w-full max-w-3xl mx-auto">
       <div className="flex gap-2 items-center">
         <div className="relative flex-1">
           <Input
             type="url"
-            placeholder="请将YouTube视频链接粘贴到这里，格式：https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            placeholder="链接粘贴到这里：https://www.youtube.com/watch?v=dQw4w9WgXcQ"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
-            className="pr-10 text-lg"
+            className="pr-10 text-base"
             style={{ 
               fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
               letterSpacing: "0.2px"
@@ -95,7 +95,7 @@ export function VideoForm() {
         </div>
         <Button 
           type="submit"
-          className="bg-green-800 hover:bg-green-700 w-32"
+          className="bg-blue-500 hover:bg-blue-600 w-32"
           disabled={loading}
         >
           {loading ? (
