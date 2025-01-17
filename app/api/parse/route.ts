@@ -134,19 +134,26 @@ setInterval(() => {
 
 export async function POST(req: Request) {
   try {
-    // 获取客户端 IP
-    const forwardedFor = req.headers.get('x-forwarded-for')
-    const ip = forwardedFor ? forwardedFor.split(',')[0] : 'unknown'
-    
-    // 检查速率限制
-    const rateLimit = getRateLimitInfo(ip)
-    if (rateLimit.count >= MAX_REQUESTS) {
+    // 验证请求来源
+    const origin = req.headers.get('origin')
+    const referer = req.headers.get('referer')
+    const host = req.headers.get('host')
+
+    // 验证请求来源
+    if (!origin || !host || !origin.includes(host)) {
       return NextResponse.json(
-        { error: '请求过于频繁，请稍后再试' },
-        { status: 429 }
+        { error: '未授权的访问来源' },
+        { status: 403 }
       )
     }
-    rateLimit.count++
+
+    // 验证 referer
+    if (!referer || !referer.includes(host)) {
+      return NextResponse.json(
+        { error: '非法的请求来源' },
+        { status: 403 }
+      )
+    }
 
     const { url } = await req.json()
 
