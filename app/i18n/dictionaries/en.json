@@ -1,0 +1,45 @@
+{
+  "title": "YouTube Video Downloader - Download YouTube Videos for Free",
+  "description": "Free YouTube video downloader, supporting multiple resolutions and formats. No software installation required.",
+  "nav": {
+    "home": "allyoutube.site YouTube Downloader"
+  },
+  "form": {
+    "placeholder": "Paste your link here: https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "button": "Parse Video",
+    "loading": "Parsing...",
+    "error": "Failed to parse video",
+    "invalidUrl": "Please enter a video URL"
+  },
+  "footer": {
+    "contact": "For advertising cooperation, questions or suggestions, please contact",
+    "email": "xiaoyuansay@gmail.com",
+    "copyright": "Copyright © 2025 allyoutube.site"
+  },
+  "faq": {
+    "title": "FAQ",
+    "joinGroup": "Can't find your answer? Join our Telegram group",
+    "items": {
+      "howToDownload": {
+        "question": "How to download?",
+        "answer": "On the new page, click the three dots in the bottom right corner, then select download"
+      },
+      "cantOpen": {
+        "question": "Why can't I open the download link?",
+        "answer": "The download link requires a clean node. Some nodes might be blocked. Try changing your node."
+      },
+      "mobile": {
+        "question": "Can I use it on mobile?",
+        "answer": "Yes, you can use it in your mobile browser. Just open the website in your browser, but you need proper network support."
+      },
+      "ios": {
+        "question": "What if the video doesn't download directly on iOS?",
+        "answer": "Since Safari and WeChat browsers don't support direct downloads, you'll need a third-party app. You can use this tool: <a href=\"https://www.notion.so/iPhone-youtube-178f66ff04f880469d70e8e068824c5b\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-500 hover:underline\">iPhone Video Download</a>"
+      },
+      "noAudio": {
+        "question": "Why is there no sound in the downloaded video?",
+        "answer": "YouTube stores video and audio separately. You can download both and merge them using this tool: <a href=\"https://pan.baidu.com/s/1No35h-CVphJtKUsLVHHqBA\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-500 hover:underline\">Jianying</a>, code: 9876"
+      }
+    }
+  }
+} 
