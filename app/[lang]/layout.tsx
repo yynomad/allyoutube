@@ -59,11 +59,11 @@ export default async function Layout({
         <div className="relative flex min-h-screen flex-col">
           <LanguageSwitcher lang={params.lang} />
           <Header dict={dict} lang={params.lang} />
-          <div className="flex-1">
-            <div className="container py-8">
+          <main className="flex-1">
+            <div className="container mx-auto px-4 py-8">
               {children}
             </div>
-          </div>
+          </main>
           <Footer dict={dict} />
         </div>
       </body>

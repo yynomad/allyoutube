@@ -13,9 +13,11 @@ export default async function Home({
   const dict = await getDictionary(lang)
 
   return (
-    <div className="space-y-8">
-      <VideoForm dict={dict} />
-      <FAQ dict={dict} />
+    <div className="min-h-[calc(100vh-200px)] flex flex-col justify-center">
+      <div className="space-y-8">
+        <VideoForm dict={dict} />
+        <FAQ dict={dict} />
+      </div>
     </div>
   )
 } 
